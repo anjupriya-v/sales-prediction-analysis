@@ -1,0 +1,20 @@
+<div class="navbar-header">
+  <app-navbar
+    (siblingAbout)="aboutLink = $event"
+    (siblingContactUs)="contactUsLink = $event"
+    (siblingSamples)="samplesLinkNav = $event"
+    (siblingFeature)="featureLink = $event"
+  ></app-navbar>
+  <app-header (siblingSamples)="samplesLink = $event"></app-header>
+  <div class="card floatingCard alert alert-success" *ngIf="logInAlert">
+    {{ current }}
+  </div>
+</div>
+<div>
+  <app-about (siblingAbout)="about = $event"> </app-about>
+</div>
+<app-samples (siblingSamples)="samples = $event"></app-samples>
+<app-features (siblingFeature)="feature = $event"></app-features>
+
+<app-contact-us (siblingContactUs)="contactUs = $event"></app-contact-us>
+<app-footer></app-footer>

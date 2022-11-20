@@ -1,0 +1,21 @@
+<div class="container header-root-div">
+  <div class="row">
+    <div class="col-lg-6 col-md-6 header-content-div">
+      <h5 *ngIf="showName" class="welcomeName">Welcome! {{ name }},</h5>
+
+      <h1 class="header-content">Sales Prediction</h1>
+      <h1 class="header-content">Analysis</h1>
+
+      <button type="button" class="btn btn-primary header-button" #samplesLink>
+        Show Samples
+      </button>
+    </div>
+    <div class="col-lg-6 col header-image-div">
+      <img
+        class="header-image"
+        src="../../../assets/Images/header-image.png"
+        alt="header_image"
+      />
+    </div>
+  </div>
+</div>

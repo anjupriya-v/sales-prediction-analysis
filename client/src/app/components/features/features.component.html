@@ -1,0 +1,25 @@
+<div #feature class="featureDiv">
+  <h1 class="featuresDiv">Features</h1>
+
+  <div class="container">
+    <div class="row">
+      <div
+        class="col-lg-4 featuresCardDiv d-flex align-items-stretch"
+        *ngFor="let feature of featureData"
+      >
+        <div class="card card-01" data-aos="zoom-out">
+          <div class="embed-responsive">
+            <img [attr.src]="feature.image" class="featureImage" />
+          </div>
+          <hr />
+
+          <div class="card-body">
+            <h4 class="card-title">{{ feature.title }}</h4>
+
+            <p class="card-text">{{ feature.content }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

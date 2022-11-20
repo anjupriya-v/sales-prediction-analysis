@@ -1,0 +1,87 @@
+#predictDatasetDiv {
+  font-family: "Inter", sans-serif;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  padding-top: 5em;
+}
+
+#predictDatasetDiv div {
+  height: auto;
+  padding: 0.5em;
+  padding-bottom: 0.3em;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+.predictDatasetHeading {
+  text-align: center;
+  padding-bottom: 0.8em;
+}
+.predictDatasetCard {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.uploadFileLabel {
+  padding-bottom: 0.5em;
+  padding-right: 0.5em;
+}
+.titleLabel {
+  padding-bottom: 0.3em;
+}
+.uploadFileDiv {
+  border-radius: 5px;
+  border: 2px dashed #1e80e8;
+  background-color: #f1f8fe;
+}
+.uploadFileDiv div {
+  padding: 2em !important;
+}
+.fileUploadExtension {
+  padding-bottom: 5px;
+}
+.fileUploadButton::-webkit-file-upload-button {
+  padding: 5px 10px;
+  background-color: rgb(45, 96, 250);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  text-transform: uppercase;
+  box-shadow: 0px 3px 3px -2px rgba(0, 0, 0, 0.2),
+    0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0px 1px 8px 0px rgba(0, 0, 0, 0.12);
+  transition: 100ms ease-out;
+  cursor: pointer;
+}
+
+.fileUploadButton::-webkit-file-upload-button:hover {
+  background-color: rgb(45, 96, 250);
+  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
+    0px 5px 8px 0px rgba(0, 0, 0, 0.14), 0px 1px 14px 0px rgba(0, 0, 0, 0.12);
+}
+#title,
+#predictColumn,
+#numericalValue,
+#periodicity {
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-radius: 0%;
+}
+.column1,
+.column2 {
+  margin-top: 0.5em;
+}
+.toolTip {
+  font-size: 20px;
+  margin-left: 0.5em;
+  cursor: pointer;
+}
+.text {
+  z-index: 2000;
+  position: absolute;
+  color: black;
+  left: 0;
+  right: 0;
+  text-align: center;
+  top: calc(50% + 40px);
+}

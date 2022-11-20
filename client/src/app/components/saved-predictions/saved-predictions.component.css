@@ -1,0 +1,156 @@
+.savedPredictionsDiv {
+  margin-top: 6em;
+}
+.savedPredictionsHeading {
+  text-align: center;
+  margin-bottom: 0.5em;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+.viewButton {
+  background: #0095ff;
+  border-radius: 999px;
+  box-shadow: rgba(255, 255, 255, 0.4) 0 10px 20px -10px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  font-family: Inter, Helvetica, "Apple Color Emoji", "Segoe UI Emoji",
+    NotoColorEmoji, "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji",
+    EmojiSymbols, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue",
+    "Noto Sans", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 6px 14px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+  word-break: break-word;
+  border: 0;
+}
+.predictedValues {
+  margin-left: 0.5em;
+}
+.savePredictionContainer {
+  clear: both;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+.metricsDiv {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.iconsDiv {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+}
+.iconsDiv {
+  font-size: 30px;
+  cursor: pointer;
+}
+.infoIcon {
+  margin-right: 0.5em;
+}
+.fa-trash {
+  margin-bottom: 0.1em;
+}
+.predictionTitle {
+  margin-bottom: 0.5em;
+}
+.fa-trash:hover {
+  color: red;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 31.25rem;
+
+  float: right;
+}
+
+.searchBar {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+#searchQueryInput {
+  height: 2.8rem;
+  background: #f5f5f5;
+  outline: none;
+  border: none;
+  border-radius: 1.625rem;
+  padding: 0 3.5rem 0 1.5rem;
+  font-size: 1rem;
+}
+
+#searchQuerySubmit {
+  width: 3.5rem;
+  height: 2.8rem;
+  margin-left: -3.5rem;
+  background: none;
+  border: none;
+  outline: none;
+}
+.infoDiv {
+  display: flex;
+  align-items: flex-end;
+  font-size: 1.3em;
+}
+.resultNotFound {
+  border: 0.1px dashed black !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 2em;
+}
+.resultNotFoundText {
+  margin-top: 0.5em;
+  margin-bottom: 2em;
+}
+.savePredictionHere {
+  width: 500px;
+  margin-bottom: 1em;
+}
+.savePredictionImageDiv {
+  border: 0.1px dashed black !important;
+  margin-top: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.savePredictionHereContent {
+  margin-bottom: 2em;
+}
+.recentlyPredicted {
+  margin-left: 0.5em;
+  color: black;
+  font-weight: normal;
+  cursor: pointer;
+  font-family: serif;
+  font-weight: bold;
+}
+.recentlyPredicted:hover {
+  text-decoration: underline;
+}
+.totalPredictionRecords {
+  margin-right: 0.5em;
+  font-weight: normal;
+  font-family: serif;
+  font-weight: bold;
+}
+
+.dropdown-menu {
+  cursor: auto;
+  pointer-events: none;
+}

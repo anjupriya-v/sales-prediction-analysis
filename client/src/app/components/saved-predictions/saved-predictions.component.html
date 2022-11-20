@@ -1,0 +1,188 @@
+<app-navbar
+  (siblingAbout)="aboutLink = $event"
+  (siblingPredictDataset)="predictDatasetLink = $event"
+  (siblingContactUs)="contactUsLink = $event"
+  (siblingNavBrand)="navBrand = $event"
+  (siblingHome)="home = $event"
+  (siblingNavbarContainer)="navbarContainer = $event"
+  (siblingSavedPredictions)="savedPredictionsLink = $event"
+  (siblingFeature)="featureLink = $event"
+  (siblingSamples)="samplesLink = $event"
+  (siblingMoreInfo)="moreInfoLink = $event"
+></app-navbar>
+<div class="savedPredictionsDiv" *ngIf="!showLoader">
+  <h1 class="savedPredictionsHeading">Saved Predictions</h1>
+  <div class="container wrapper">
+    <div class="searchBar">
+      <input
+        id="searchQueryInput"
+        type="text"
+        name="searchQueryInput"
+        placeholder="Based on title"
+        #searchInput
+        (keyup)="searchPrediction(searchInput.value)"
+      />
+      <button id="searchQuerySubmit" type="submit" name="searchQuerySubmit">
+        <i class="fa fa-search"></i>
+      </button>
+    </div>
+  </div>
+  <div class="container infoDiv">
+    <span class="totalPredictionRecords"
+      >Total Prediction Records : {{ predictionData.length }}</span
+    >
+    <div *ngIf="show" class="recentlyPredictedDiv">
+      |
+      <span routerLink="/prediction-result" class="recentlyPredicted"
+        >Recently Predicted</span
+      >
+    </div>
+  </div>
+  <div *ngIf="!predictionsSaved">
+    <div class="container savePredictionImageDiv">
+      <img
+        src="../../../assets/Images/savePrediction.jpg"
+        class="savePredictionHere"
+      />
+      <h5 *ngIf="show" class="savePredictionHereContent">
+        Nothing is saved here...
+      </h5>
+      <h5 *ngIf="!show" class="savePredictionHereContent">
+        Do and save your first prediction here
+      </h5>
+    </div>
+  </div>
+  <div *ngIf="resultNotFound">
+    <div class="container resultNotFound">
+      <img src="../../../assets/Images/resultNotFound.png" />
+      <h5 class="resultNotFoundText">No Results Found</h5>
+    </div>
+  </div>
+  <div *ngFor="let data of predictionData">
+    <div class="container">
+      <ngx-spinner
+        bdColor="rgba(255, 255, 255, 0.5)"
+        size="medium"
+        color="#000"
+        type="ball-scale-multiple"
+        name="deletePrediction"
+      >
+        <p style="font-size: 20px; color: black">deleting...</p>
+      </ngx-spinner>
+      <div class="card savePredictionContainer">
+        <div class="card-body">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-4">
+                <h5 class="predictionTitle">Title:{{ " " + data.title }}</h5>
+                <button
+                  class="viewButton"
+                  (click)="
+                    visualization(
+                      data.predicted_date,
+                      data.predicted_column,
+                      data.predictedColumnName,
+                      data.columnName
+                    )
+                  "
+                  data-toggle="modal"
+                  data-target=".bd-example-modal-lg"
+                >
+                  Visualization
+                </button>
+                <button
+                  (click)="
+                    sendPredictedValues(
+                      data.predictedColumnName,
+                      data.predicted_date,
+                      data.predicted_column
+                    )
+                  "
+                  class="viewButton predictedValues"
+                >
+                  Predicted values
+                </button>
+              </div>
+              <div class="col-lg-4 metricsDiv">
+                <h6>
+                  <b>Mean Absolute Percentage Error:</b>{{ " " + data.mape }}
+                </h6>
+                <h6><b>Root Mean Square Error:</b>{{ " " + data.rmse }}</h6>
+              </div>
+              <div class="col-lg-3 metricsDiv">
+                <h6><b>Mean Absolute Error:</b>{{ " " + data.mae }}</h6>
+
+                <h6><b>Mean Squared Error:</b>{{ " " + data.mse }}</h6>
+              </div>
+              <div class="col-lg-1 iconsDiv">
+                <div class="btn-group infoIcon dropup">
+                  <a
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    <i class="fa fa-info-circle" aria-hidden="true"></i>
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-right">
+                    <h6 class="dropdown-item">
+                      Saved time: {{ " " + data.dateAndTime }}
+                    </h6>
+                    <h6 class="dropdown-item">
+                      Predicted for:
+                      {{ " " + data.numericalValue + " " + data.periodicity }}
+                    </h6>
+                  </div>
+                </div>
+                <i
+                  class="fa fa-trash"
+                  aria-hidden="true"
+                  (click)="deletePrediction(data.dateAndTime, data.title)"
+                ></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="modal fade bd-example-modal-lg"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="myLargeModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Visualization</h5>
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <app-visualization></app-visualization>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<ngx-spinner
+  bdColor="white"
+  size="medium"
+  color="#000"
+  type="ball-scale-multiple"
+  name="getPredictions"
+>
+  <p style="font-size: 20px; color: black">Please wait...</p>
+</ngx-spinner>

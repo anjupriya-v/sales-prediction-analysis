@@ -1,0 +1,217 @@
+<app-navbar
+  (siblingNavbarContainer)="navbarContainer = $event"
+  (siblingAbout)="aboutLink = $event"
+  (siblingSavedPredictions)="savedPredictionsLink = $event"
+  (siblingPredictDataset)="predictDatasetLink = $event"
+  (siblingContactUs)="contactUsLink = $event"
+  (siblingNavBrand)="navBrand = $event"
+  (siblingHome)="home = $event"
+  (siblingFeature)="featureLink = $event"
+  (siblingSamples)="samplesLink = $event"
+  (siblingMoreInfo)="moreInfoLink = $event"
+></app-navbar>
+<div #predictDataset id="predictDatasetDiv" data-aos="zoom-out">
+  <div>
+    <h4 class="predictDatasetHeading">Predict your dataset</h4>
+    <div class="card predictDatasetCard">
+      <div class="card-body">
+        <form (ngSubmit)="submitData()" [formGroup]="predictForm">
+          <div class="form-group container">
+            <div>
+              <label for="exampleFormControlFile1" class="uploadFileLabel"
+                >File Upload
+              </label>
+              <span
+                >(Download this<a
+                  href="../../../assets/file/sales_data_sample.csv"
+                >
+                  dataset</a
+                >
+                to predict)</span
+              >
+              <div class="uploadFileDiv">
+                <div>
+                  <p class="fileUploadExtension">Upload .csv or .xlsx</p>
+                  <input
+                    required
+                    type="file"
+                    (change)="getFile($event)"
+                    name="file"
+                    class="form-control-file fileUploadButton"
+                    id="exampleFormControlFile1"
+                    formControlName="file"
+                  />
+                  <span
+                    class="text-danger"
+                    *ngIf="
+                      submitted &&
+                      predictForm.controls['file'].errors &&
+                      predictForm.controls['file'].errors['required']
+                    "
+                  >
+                    file is required
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="form-row column1">
+              <div class="form-group col-md-6">
+                <label for="title" class="labelTitle">Title</label>
+                <input
+                  required
+                  type="text"
+                  class="form-control shadow-none"
+                  id="title"
+                  name="title"
+                  formControlName="title"
+                />
+
+                <span
+                  class="text-danger"
+                  *ngIf="
+                    submitted &&
+                    predictForm.controls['title'].errors &&
+                    predictForm.controls['title'].errors['required']
+                  "
+                >
+                  title is required
+                </span>
+                <span
+                  class="text-danger"
+                  *ngIf="
+                    submitted &&
+                    predictForm.controls['title'].errors &&
+                    predictForm.controls['title'].errors['maxlength']
+                  "
+                >
+                  length should not exceed 25
+                </span>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="predictColumn">Predict column</label>
+                <select
+                  required
+                  id="predictColumn"
+                  class="form-control shadow-none"
+                  name="predictColumn"
+                  formControlName="predictColumn"
+                >
+                  <option selected>Select</option>
+                  <option>ORDER_NUMBER</option>
+                  <option>QUANTITY_ORDERED</option>
+                  <option>PRICE_EACH</option>
+                  <option>ORDER_LINE_NUMBER</option>
+                  <option>SALES</option>
+                  <option>STATUS</option>
+                  <option>QTR_ID</option>
+                  <option>MONTH_ID</option>
+                  <option>YEAR_ID</option>
+                  <option>PRODUCT_LINE</option>
+                  <option>MSRP</option>
+                  <option>COUNTRY</option>
+                  <option>DEAL_SIZE</option>
+                </select>
+                <span
+                  class="text-danger"
+                  *ngIf="
+                    submitted &&
+                    predictForm.controls['predictColumn'].errors &&
+                    predictForm.controls['predictColumn'].errors['required']
+                  "
+                >
+                  column is required
+                </span>
+              </div>
+            </div>
+            <div class="form-row column2">
+              <div class="form-group col-md-6">
+                <label for="periodicity">Periodicity</label>
+                <i
+                  class="fa fa-info-circle toolTip"
+                  aria-hidden="true"
+                  data-toggle="tooltip"
+                  data-placement="top"
+                  title="predict for monthly, weekly, day-wise or yearly"
+                ></i>
+                <select
+                  required
+                  id="periodicity"
+                  class="form-control shadow-none"
+                  name="periodicity"
+                  formControlName="periodicity"
+                >
+                  <option selected>Select</option>
+                  <option>Yearly</option>
+                  <option>Monthly</option>
+                  <option>Weekly</option>
+                  <option>Day-wise</option>
+                </select>
+                <span
+                  class="text-danger"
+                  *ngIf="
+                    submitted &&
+                    predictForm.controls['periodicity'].errors &&
+                    predictForm.controls['periodicity'].errors['required']
+                  "
+                >
+                  periodicity is required
+                </span>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="numericalValue">Numerical Value</label>
+                <i
+                  class="fa fa-info-circle toolTip"
+                  aria-hidden="true"
+                  data-toggle="tooltip"
+                  data-placement="top"
+                  title="If the numerical value is 2 and periodicity is weekly, it will predict for 2 weeks"
+                ></i>
+                <input
+                  required
+                  type="number"
+                  class="form-control shadow-none"
+                  id="numericalValue"
+                  name="numericalValue"
+                  formControlName="numericalValue"
+                />
+                <span
+                  class="text-danger"
+                  *ngIf="
+                    submitted &&
+                    predictForm.controls['numericalValue'].errors &&
+                    predictForm.controls['numericalValue'].errors['required']
+                  "
+                >
+                  numerical value is required
+                </span>
+                <span
+                  class="text-danger"
+                  *ngIf="
+                    submitted &&
+                    predictForm.controls['numericalValue'].errors &&
+                    predictForm.controls['numericalValue'].errors['min']
+                  "
+                >
+                  numerical value should be greater than 0
+                </span>
+              </div>
+            </div>
+            <div>
+              <button class="btn btn-primary" type="submit">
+                Get Predictions
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<ngx-spinner
+  bdColor="white"
+  size="medium"
+  color="#000"
+  type="ball-scale-multiple"
+>
+  <p style="font-size: 20px; color: black">Predicting your dataset...</p>
+</ngx-spinner>

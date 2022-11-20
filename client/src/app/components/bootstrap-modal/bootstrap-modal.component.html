@@ -1,0 +1,41 @@
+<div class="modal-header">
+  <h5 class="modal-title" id="exampleModalLongTitle">Predicted Values</h5>
+  <button
+    type="button"
+    class="close"
+    data-dismiss="modal"
+    aria-label="Close"
+    (click)="closeModal('changes saved!')"
+  >
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <table class="table table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Predicted Date</th>
+        <th scope="col">{{ fromParent["predictedColumnName"] }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let date_data of fromParent['predicted_date']; let i = index">
+        <td>
+          {{ date_data }}
+        </td>
+        <td>
+          {{ fromParent["predicted_column"][i] }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="modal-footer">
+  <button
+    type="button"
+    class="btn btn-primary"
+    (click)="closeModal('changes saved!')"
+  >
+    Close
+  </button>
+</div>

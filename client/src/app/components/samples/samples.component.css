@@ -1,0 +1,82 @@
+.samples-div {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 5.5em;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.card {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  transition: transform 0.4s ease;
+  cursor: pointer;
+}
+
+.containerDiv {
+  width: 100%;
+  max-width: 800px;
+  max-height: 600px;
+  height: 100%;
+  transform-style: preserve-3d;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 3em;
+}
+
+.cards {
+  position: relative;
+  width: 100%;
+  height: 90%;
+  margin-bottom: 20px;
+}
+
+.samples-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: contain;
+}
+
+#item-1:checked ~ .cards #sample-3,
+#item-2:checked ~ .cards #sample-1,
+#item-3:checked ~ .cards #sample-2 {
+  transform: translatex(-40%) scale(0.8);
+  opacity: 0.4;
+  z-index: 0;
+}
+
+#item-1:checked ~ .cards #sample-2,
+#item-2:checked ~ .cards #sample-3,
+#item-3:checked ~ .cards #sample-1 {
+  transform: translatex(40%) scale(0.8);
+  opacity: 0.4;
+  z-index: 0;
+}
+
+#item-1:checked ~ .cards #sample-1,
+#item-2:checked ~ .cards #sample-2,
+#item-3:checked ~ .cards #sample-3 {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transform: translatex(0) scale(1);
+  opacity: 1;
+  z-index: 1;
+}
+
+.sample-content {
+  text-align: center;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}

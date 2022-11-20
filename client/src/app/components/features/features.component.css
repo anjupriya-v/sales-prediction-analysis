@@ -1,0 +1,67 @@
+.featureDiv {
+  height: 100vh;
+  padding-top: 5.5em;
+}
+.featuresDiv {
+  text-align: center;
+}
+.featuresCardDiv {
+  margin-top: 3em;
+}
+.btn-default {
+  background: #006eff;
+  width: 100%;
+  color: #fff;
+  font-weight: 700;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+  font-size: 14px;
+}
+.card {
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  border: none;
+  margin-bottom: 30px;
+}
+.card:hover {
+  transform: scale(1.05);
+  transition: all 1s ease;
+  z-index: 999;
+}
+.card-01 {
+  position: relative;
+  padding-top: 40px;
+}
+.card-01 .badge-box {
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  margin-left: -50px;
+  z-index: 1;
+  text-align: center;
+}
+
+.card-01 .badge-box i {
+  background: #006eff;
+  color: #fff;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  font-size: 20px;
+}
+.featureImage {
+  width: 350px;
+  height: 250px;
+  object-fit: contain;
+}
+.card-title {
+  margin-bottom: 1em;
+  text-align: center;
+}
+.card-text {
+  line-height: 1.8em;
+  text-align: justify;
+}

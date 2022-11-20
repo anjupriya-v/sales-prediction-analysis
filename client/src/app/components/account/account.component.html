@@ -1,0 +1,266 @@
+<app-navbar
+  (siblingNavbarContainer)="navbarContainer = $event"
+  (siblingAbout)="aboutLink = $event"
+  (siblingContactUs)="contactUsLink = $event"
+  (siblingNavBrand)="navBrand = $event"
+  (siblingLogin)="loginLink = $event"
+  (siblingHome)="home = $event"
+  (siblingFeature)="featureLink = $event"
+  (siblingSamples)="samplesLink = $event"
+></app-navbar>
+<div class="loginDiv">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 welcome">
+        <div class="welcome-content">
+          <h1 class="welcome-heading">Welcome User!</h1>
+          <span class="some-content"
+            >Want to predict the sales record? <br />{{ actions }} here</span
+          >
+        </div>
+        <img
+          src="../../../assets/Images/welcome-image.jpg"
+          class="welcome-image"
+        />
+      </div>
+      <div class="col-lg-5 loginform" #loginform>
+        <h4 class="login-heading">Sign In</h4>
+        <form (ngSubmit)="signIn()" [formGroup]="signInForm">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input
+              required
+              type="email"
+              class="form-control input-field"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+              placeholder="Enter email"
+              name="email"
+              formControlName="email"
+              (keyup)="changeSignInInput()"
+            />
+            <span
+              class="text-danger"
+              *ngIf="
+                signInSubmitted &&
+                signInForm.controls['email'].errors &&
+                signInForm.controls['email'].errors['required']
+              "
+            >
+              email is required
+            </span>
+            <span
+              class="text-danger"
+              *ngIf="
+                signInSubmitted &&
+                signInForm.controls['email'].errors &&
+                signInForm.controls['email'].errors['email']
+              "
+            >
+              email is invalid
+            </span>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input
+              required
+              type="password"
+              class="form-control input-field"
+              id="exampleInputPassword1"
+              placeholder="Password"
+              name="password"
+              formControlName="password"
+              (keyup)="changeSignInInput()"
+            />
+            <span
+              class="text-danger"
+              *ngIf="
+                signInSubmitted &&
+                signInForm.controls['password'].errors &&
+                signInForm.controls['password'].errors['required']
+              "
+            >
+              password is required
+            </span>
+            <span
+              class="text-danger"
+              *ngIf="
+                signInSubmitted &&
+                signInForm.controls['password'].errors &&
+                signInForm.controls['password'].errors['minlength']
+              "
+            >
+              password must have atleast 8 characters
+            </span>
+          </div>
+          <div class="alert alert-danger" *ngIf="showSignInError" role="alert">
+            {{ signInError }}
+          </div>
+          <button type="submit" class="btn btn-primary">Sign In</button>
+          <p>
+            New User?
+            <span (click)="showSignUp()" class="signupLink">
+              Click here to sign up</span
+            >
+          </p>
+        </form>
+      </div>
+      <div class="col-lg-5 signupform" #signupform>
+        <h4 class="signup-heading">Sign Up</h4>
+        <form (ngSubmit)="signUp()" [formGroup]="signUpForm">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Full Name</label>
+            <input
+              type="text"
+              class="form-control input-field"
+              id="exampleInputName"
+              aria-describedby="emailHelp"
+              placeholder="Enter full name"
+              name="fullName"
+              formControlName="fullName"
+            />
+            <span
+              class="text-danger"
+              *ngIf="
+                signUpSubmitted &&
+                signUpForm.controls['fullName'].errors &&
+                signUpForm.controls['fullName'].errors['required']
+              "
+            >
+              full name is required
+            </span>
+            <span
+              class="text-danger"
+              *ngIf="
+                signUpSubmitted &&
+                signUpForm.controls['fullName'].errors &&
+                signUpForm.controls['fullName'].errors['maxlength']
+              "
+            >
+              name should be allowed only 15 characters
+            </span>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input
+              type="email"
+              class="form-control input-field"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+              placeholder="Enter email"
+              name="email"
+              formControlName="email"
+              (keyup)="changeSignUpInput()"
+            />
+            <span
+              class="text-danger"
+              *ngIf="
+                signUpSubmitted &&
+                signUpForm.controls['email'].errors &&
+                signUpForm.controls['email'].errors['required']
+              "
+            >
+              email is required
+            </span>
+            <span
+              class="text-danger"
+              *ngIf="
+                signUpSubmitted &&
+                signUpForm.controls['email'].errors &&
+                signUpForm.controls['email'].errors['email']
+              "
+            >
+              email is invalid
+            </span>
+          </div>
+          <div class="form-group">
+            <label for="phoneNumber">Phone Number</label>
+            <input
+              type="number"
+              class="form-control input-field"
+              id="phoneNumber"
+              placeholder="Phone Number"
+              name="phoneNumber"
+              formControlName="phoneNumber"
+            />
+            <span
+              class="text-danger"
+              *ngIf="
+                signUpSubmitted &&
+                signUpForm.controls['phoneNumber'].errors &&
+                signUpForm.controls['phoneNumber'].errors['required']
+              "
+            >
+              phone number is required
+            </span>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input
+              type="password"
+              class="form-control input-field"
+              id="exampleInputPassword1"
+              placeholder="Password"
+              name="password"
+              formControlName="password"
+            />
+            <span
+              class="text-danger"
+              *ngIf="
+                signUpSubmitted &&
+                signUpForm.controls['password'].errors &&
+                signUpForm.controls['password'].errors['required']
+              "
+            >
+              password is required
+            </span>
+            <span
+              class="text-danger"
+              *ngIf="
+                signUpSubmitted &&
+                signUpForm.controls['password'].errors &&
+                signUpForm.controls['password'].errors['minlength']
+              "
+            >
+              password must have atleast 8 characters
+            </span>
+          </div>
+          <div class="alert alert-danger" *ngIf="showSignUpError" role="alert">
+            {{ signUpError }}
+          </div>
+          <button type="submit" class="btn btn-primary">Sign Up</button>
+          <p>
+            Already an existing user?<span
+              (click)="showLogin()"
+              class="loginLink"
+            >
+              Click here to sign in</span
+            >
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<ngx-spinner
+  bdColor="white"
+  size="medium"
+  color="#000"
+  type="ball-scale-multiple"
+  name="signIn"
+>
+  <p style="font-size: 20px; color: black">
+    Trying to signing into your account...
+  </p>
+</ngx-spinner>
+<ngx-spinner
+  bdColor="white"
+  size="medium"
+  color="#000"
+  type="ball-scale-multiple"
+  name="signUp"
+>
+  <p style="font-size: 20px; color: black">
+    Trying to signing up your account...
+  </p>
+</ngx-spinner>

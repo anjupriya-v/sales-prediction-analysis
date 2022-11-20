@@ -1,0 +1,127 @@
+<div class="contact-div" data-aos="zoom-out" #contactUs>
+  <h1 class="contact-us-heading">Contact Us!</h1>
+  <ngx-spinner
+    bdColor="rgba(255, 255, 255, 0.5)"
+    size="medium"
+    color="black"
+    type="ball-scale-multiple"
+  >
+    <p style="font-size: 20px; color: black">Submitting your details...</p>
+  </ngx-spinner>
+  <div class="container">
+    <div class="formbold-main-wrapper">
+      <div class="formbold-form-wrapper">
+        <form (ngSubmit)="submitContactForm($event)" [formGroup]="contactForm">
+          <div class="formbold-mb-5">
+            <label for="name" class="formbold-form-label"> Full Name </label>
+            <input
+              type="text"
+              name="firstName"
+              id="name"
+              placeholder="Full Name"
+              class="formbold-form-input"
+              formControlName="name"
+            />
+            <span
+              class="text-danger"
+              *ngIf="
+                submitted &&
+                contactForm.controls['name'].errors &&
+                contactForm.controls['name'].errors['required']
+              "
+            >
+              name is required
+            </span>
+          </div>
+
+          <div class="formbold-mb-5">
+            <label for="email" class="formbold-form-label">
+              Email Address
+            </label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Enter your email"
+              class="formbold-form-input"
+              formControlName="email"
+            />
+            <span
+              class="text-danger"
+              *ngIf="
+                submitted &&
+                contactForm.controls['email'].errors &&
+                contactForm.controls['email'].errors['required']
+              "
+            >
+              email is required
+            </span>
+            <span
+              class="text-danger"
+              *ngIf="
+                submitted &&
+                contactForm.controls['email'].errors &&
+                contactForm.controls['email'].errors['email']
+              "
+            >
+              email is invalid
+            </span>
+          </div>
+          <div class="formbold-mb-5">
+            <label for="phoneNumber" class="formbold-form-label">
+              Phone Number
+            </label>
+            <input
+              type="number"
+              name="phoneNumber"
+              id="phoneNumber"
+              placeholder="Enter your phone number"
+              class="formbold-form-input"
+              formControlName="phoneNumber"
+            />
+            <span
+              class="text-danger"
+              *ngIf="
+                submitted &&
+                contactForm.controls['phoneNumber'].errors &&
+                contactForm.controls['phoneNumber'].errors['required']
+              "
+            >
+              phone number is required
+            </span>
+          </div>
+          <div class="formbold-mb-5">
+            <label for="message" class="formbold-form-label"> Message </label>
+            <textarea
+              rows="6"
+              name="message"
+              id="message"
+              placeholder="Type your message"
+              class="formbold-form-input"
+              formControlName="message"
+            ></textarea>
+            <span
+              class="text-danger"
+              *ngIf="
+                submitted &&
+                contactForm.controls['message'].errors &&
+                contactForm.controls['message'].errors['required']
+              "
+            >
+              message is required
+            </span>
+          </div>
+          <div *ngIf="contactFormSubmitted" class="alert alert-success">
+            Your Contact details has been Submitted.Please check your Inbox
+          </div>
+          <div *ngIf="error" class="alert alert-danger">
+            There is some error in submitting your contact details
+          </div>
+          <div>
+            <button class="formbold-btn">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

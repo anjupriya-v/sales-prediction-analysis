@@ -1,0 +1,40 @@
+.predictionResultDiv {
+  margin-top: 6em;
+}
+.predictionResultHeading {
+  margin-left: 2.5em;
+  margin-bottom: 1em;
+}
+.metrics-heading {
+  text-align: center;
+  margin-bottom: 1em;
+}
+.metricsDiv .card {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+.options-heading {
+  text-align: center;
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+.card-body h6 {
+  line-height: 23px;
+}
+.canvasDiv {
+  padding-right: 3em;
+}
+.optionsDiv {
+  text-align: center;
+}
+.savePredictionLink {
+  color: rgb(0, 89, 255) !important;
+  cursor: pointer;
+}
+.savePredictionLink:hover {
+  text-decoration: underline !important;
+  color: rgb(32, 32, 161) !important;
+}
+.period {
+  margin-left: 4.5em;
+}

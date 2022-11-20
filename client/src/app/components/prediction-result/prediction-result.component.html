@@ -1,0 +1,75 @@
+<app-navbar
+  (siblingNavbarContainer)="navbarContainer = $event"
+  (siblingAbout)="aboutLink = $event"
+  (siblingSavedPredictions)="savedPredictionsLink = $event"
+  (siblingPredictDataset)="predictDatasetLink = $event"
+  (siblingContactUs)="contactUsLink = $event"
+  (siblingNavBrand)="navBrand = $event"
+  (siblingHome)="home = $event"
+  (siblingFeature)="featureLink = $event"
+  (siblingSamples)="samplesLink = $event"
+  (siblingMoreInfo)="moreInfoLink = $event"
+></app-navbar>
+<div class="predictionResultDiv">
+  <div class="predictionResultSubDiv container-fluid">
+    <h3 class="predictionResultHeading">Title: {{ title }}</h3>
+
+    <h6 class="period">
+      Predicted for {{ numericalValue + " " }}{{ periodicity }}
+    </h6>
+    <div class="row">
+      <div class="col-lg-8 canvasDiv">
+        <app-visualization></app-visualization>
+      </div>
+      <div class="col-lg-4 metricsDiv">
+        <h4 class="metrics-heading">Prediction Metrics</h4>
+        <div class="card">
+          <div class="card-body">
+            <h6><b>Mean Absolute Percentage Error : </b>{{ mape }}%</h6>
+            <h6><b>Mean Absolute Error : </b>{{ mae }}</h6>
+            <h6><b>Root Mean Square Error : </b>{{ rmse }}</h6>
+            <h6><b>Mean Squared Error : </b>{{ mse }}</h6>
+          </div>
+        </div>
+        <h4 class="options-heading">More Options</h4>
+        <div class="card optionsDiv">
+          <div class="card-body">
+            <h6>
+              <a (click)="savePrediction()" class="savePredictionLink">
+                Save this Prediction</a
+              >
+            </h6>
+            <h6>
+              <a (click)="viewPredictionValues()" class="savePredictionLink">
+                View Prediction Values</a
+              >
+            </h6>
+            <h6>
+              <a href="../../../assets/file/prediction.csv"
+                >Download Predicted CSV file</a
+              >
+            </h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<ngx-spinner
+  bdColor="white"
+  size="medium"
+  color="#000"
+  type="ball-scale-multiple"
+  name="showPredictionResultSpinner"
+>
+  <p style="font-size: 20px; color: black">loading...</p>
+</ngx-spinner>
+<ngx-spinner
+  bdColor="white"
+  size="medium"
+  color="#000"
+  type="ball-scale-multiple"
+  name="showSavePredictionSpinner"
+>
+  <p style="font-size: 20px; color: black">Saving...</p>
+</ngx-spinner>

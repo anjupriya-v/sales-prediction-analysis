@@ -1,0 +1,70 @@
+.loginDiv {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 2em;
+}
+.welcome {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.welcome-image {
+  width: 100px;
+}
+.welcome-content {
+  padding-right: 2em;
+  text-align: center;
+}
+.loginform {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1em;
+}
+.input-field {
+  width: 25em !important;
+}
+.login-heading,
+.signup-heading {
+  padding-bottom: 1em;
+  text-align: center;
+}
+.navbar-brand {
+  color: white !important;
+}
+.login-logo {
+  width: 50px;
+  height: 50px;
+  margin-right: 0.5em;
+}
+.navbar {
+  position: fixed;
+}
+
+.signupform {
+  display: none;
+}
+.loginLink,
+.signupLink {
+  color: blue;
+  cursor: pointer;
+}
+p {
+  padding-top: 2em;
+}
+.loginform,
+.signupform {
+  margin-left: 2em;
+}
+.some-content {
+  line-height: 20px;
+}
+.welcome-heading {
+  padding-bottom: 0.2em;
+}

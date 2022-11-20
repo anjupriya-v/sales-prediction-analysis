@@ -1,0 +1,39 @@
+.sales-logo {
+  width: 50px;
+  height: 50px;
+  margin-right: 0.5em;
+}
+
+.navbar-brand,
+.nav-link,
+.navbar-text {
+  font-weight: bold;
+  cursor: pointer;
+  color: white;
+}
+.nav-link {
+  margin-left: 1.5em;
+  white-space: nowrap;
+  color: white !important;
+}
+.navbar-brand {
+  margin-left: 1.5em;
+}
+.sampleLink {
+  margin-right: 1.2em;
+}
+
+.whiteBackground {
+  color: black;
+  background-color: white;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+.userInfoModal {
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 2em;
+}
+.ans {
+  padding-left: 2em;
+}

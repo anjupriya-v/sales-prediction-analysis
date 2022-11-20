@@ -1,0 +1,51 @@
+.navbar-header {
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("../../../assets/Images/home-bg-image.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+}
+
+/* .navbar-header:before {
+  content: "";
+  position: absolute;
+
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 1290px;
+
+  background: rgb(246, 199, 88);
+  transform: skew(120deg);
+  transform-origin: top;
+  box-shadow: 9px 0 9px -9px #333;
+} */
+.floatingCard {
+  position: absolute;
+  bottom: 0%;
+  left: 82%;
+  z-index: 1;
+}
+@media (min-width: 1025px) and (max-width: 1440px) {
+  /*h*/
+  .navbar-header:before {
+    width: 1300px;
+
+    transform: skew(120deg);
+  }
+}
+@media (min-width: 721px) and (max-width: 1024px) {
+  .navbar-header:before {
+    width: 913px;
+    transform: skew(126deg);
+  }
+}
+@media (min-width: 601px) and (max-width: 720px) {
+  /*h*/
+  .navbar-header:before {
+    width: 720px;
+    transform: skew(134deg);
+  }
+}

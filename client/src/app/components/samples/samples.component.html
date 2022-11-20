@@ -1,0 +1,20 @@
+<div class="samples-div" #samples>
+  <h1 class="samples-heading">Sample Predictions</h1>
+  <div class="containerDiv" data-aos="zoom-out">
+    <input type="radio" name="slider" id="item-1" checked />
+    <input type="radio" name="slider" id="item-2" />
+    <input type="radio" name="slider" id="item-3" />
+    <div class="cards">
+      <div *ngFor="let sample of samplesData">
+        <label class="card" [attr.for]="sample.for" [attr.id]="sample.id">
+          <img
+            [attr.src]="sample.image"
+            [attr.alt]="sample.alt"
+            class="samples-image"
+          />
+          <h6 class="sample-content">{{ sample.content }}</h6>
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
