@@ -4,7 +4,6 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding-top: 3em;
 }
 .contact-us-heading {
   margin-bottom: 0.8em;
@@ -96,6 +95,3 @@
     width: 50%;
   }
 }
-/* p {
-  background-color: rgba(240, 240, 240, 0.952);
-} */

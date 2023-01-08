@@ -4,8 +4,12 @@
     (siblingContactUs)="contactUsLink = $event"
     (siblingSamples)="samplesLinkNav = $event"
     (siblingFeature)="featureLink = $event"
+    (siblingHome)="homeLink = $event"
   ></app-navbar>
-  <app-header (siblingSamples)="samplesLink = $event"></app-header>
+  <app-header
+    (siblingSamples)="samplesLink = $event"
+    (siblingHeader)="header = $event"
+  ></app-header>
   <div class="card floatingCard alert alert-success" *ngIf="logInAlert">
     {{ current }}
   </div>

@@ -5,13 +5,14 @@
 }
 
 .navbar-brand,
-.nav-link,
 .navbar-text {
   font-weight: bold;
   cursor: pointer;
-  color: white;
+  color: white !important;
 }
 .nav-link {
+  font-weight: bold;
+  cursor: pointer;
   margin-left: 1.5em;
   white-space: nowrap;
   color: white !important;
@@ -23,9 +24,8 @@
   margin-right: 1.2em;
 }
 
-.whiteBackground {
-  color: black;
-  background-color: white;
+.filledBackground {
+  background-color: #343a40;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }

@@ -16,7 +16,11 @@ export class HeaderComponent implements OnInit {
   name: any;
   showName: any;
   @ViewChild('samplesLink') siblingSamplesLink: ElementRef;
+  @ViewChild('headerDiv') siblingheaderDiv: ElementRef;
+
   @Output() siblingSamples = new EventEmitter();
+  @Output() siblingHeader = new EventEmitter();
+
   constructor() {}
 
   ngOnInit(): void {
@@ -30,5 +34,6 @@ export class HeaderComponent implements OnInit {
 
   ngAfterViewInit(): void {
     this.siblingSamples.emit(this.siblingSamplesLink);
+    this.siblingHeader.emit(this.siblingheaderDiv);
   }
 }

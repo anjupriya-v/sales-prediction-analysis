@@ -8,20 +8,6 @@
   background-position: bottom center;
 }
 
-/* .navbar-header:before {
-  content: "";
-  position: absolute;
-
-  top: 0;
-  bottom: 0;
-  left: 0;
-  width: 1290px;
-
-  background: rgb(246, 199, 88);
-  transform: skew(120deg);
-  transform-origin: top;
-  box-shadow: 9px 0 9px -9px #333;
-} */
 .floatingCard {
   position: absolute;
   bottom: 0%;

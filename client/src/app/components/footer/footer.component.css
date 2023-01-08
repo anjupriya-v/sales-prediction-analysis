@@ -5,7 +5,7 @@ a {
   display: inherit;
 }
 .footer-div {
-  background-color: rgb(65, 65, 65) !important;
+  background-color: #343a40 !important;
   background-size: cover;
   margin-top: 4em;
 }

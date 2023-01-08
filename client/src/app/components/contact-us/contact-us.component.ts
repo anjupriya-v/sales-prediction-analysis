@@ -50,7 +50,7 @@ export class ContactUsComponent implements OnInit {
           'service_XXX',
           'template_XXX',
           e.target as HTMLFormElement,
-          'userID_XXXXXXXXXXXXXXX'
+          'user_XXXXXXXXXXXXXX'
         )
         .then(
           (result: EmailJSResponseStatus) => {

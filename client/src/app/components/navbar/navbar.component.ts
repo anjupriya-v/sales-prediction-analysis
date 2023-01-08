@@ -78,89 +78,9 @@ export class NavbarComponent implements OnInit {
     let element = document.querySelector('.navbar') as HTMLElement;
 
     if (window.pageYOffset > element.clientHeight) {
-      element.classList.add('whiteBackground');
-      this.siblingPredictDatasetNavLink.nativeElement.setAttribute(
-        'style',
-        'color: black !important'
-      );
-      this.siblingAboutNavLink.nativeElement.setAttribute(
-        'style',
-        'color: black !important'
-      );
-      this.siblingContactUsLink.nativeElement.setAttribute(
-        'style',
-        'color: black !important'
-      );
-      this.siblingSamplesLink.nativeElement.setAttribute(
-        'style',
-        'color: black !important'
-      );
-      this.siblingMoreInfoLink.nativeElement.setAttribute(
-        'style',
-        'color: black !important'
-      );
-      this.siblingFeatureLink.nativeElement.setAttribute(
-        'style',
-        'color: black !important'
-      );
-      this.siblingHomeLink.nativeElement.setAttribute(
-        'style',
-        'color: black !important'
-      );
-      this.siblingLoginLink.nativeElement.setAttribute(
-        'style',
-        'color: black !important'
-      );
-      this.siblingSavedPredictionsLink.nativeElement.setAttribute(
-        'style',
-        'color: black !important'
-      );
-      this.siblingNavBrandLink.nativeElement.setAttribute(
-        'style',
-        'color: black !important'
-      );
+      element.classList.add('filledBackground');
     } else {
-      element.classList.remove('whiteBackground');
-      this.siblingPredictDatasetNavLink.nativeElement.setAttribute(
-        'style',
-        'color: white !important'
-      );
-      this.siblingAboutNavLink.nativeElement.setAttribute(
-        'style',
-        'color: white !important'
-      );
-      this.siblingContactUsLink.nativeElement.setAttribute(
-        'style',
-        'color: white !important'
-      );
-      this.siblingSamplesLink.nativeElement.setAttribute(
-        'style',
-        'color: white !important'
-      );
-      this.siblingMoreInfoLink.nativeElement.setAttribute(
-        'style',
-        'color: white !important'
-      );
-      this.siblingFeatureLink.nativeElement.setAttribute(
-        'style',
-        'color: white !important'
-      );
-      this.siblingHomeLink.nativeElement.setAttribute(
-        'style',
-        'color: white !important'
-      );
-      this.siblingLoginLink.nativeElement.setAttribute(
-        'style',
-        'color: white !important'
-      );
-      this.siblingSavedPredictionsLink.nativeElement.setAttribute(
-        'style',
-        'color: white !important'
-      );
-      this.siblingNavBrandLink.nativeElement.setAttribute(
-        'style',
-        'color: white !important'
-      );
+      element.classList.remove('filledBackground');
     }
   }
 

@@ -15,6 +15,9 @@ export class HomeComponent implements OnInit {
   contactUs: ElementRef;
   feature: ElementRef;
   featureLink: ElementRef;
+  homeLink: ElementRef;
+  header: ElementRef;
+
   current: any;
   logInAlert: boolean;
   constructor(private router: Router) {}
@@ -60,6 +63,13 @@ export class HomeComponent implements OnInit {
     });
     this.contactUsLink.nativeElement.addEventListener('click', () => {
       this.contactUs.nativeElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+        inline: 'nearest',
+      });
+    });
+    this.homeLink.nativeElement.addEventListener('click', () => {
+      this.header.nativeElement.scrollIntoView({
         behavior: 'smooth',
         block: 'start',
         inline: 'nearest',
