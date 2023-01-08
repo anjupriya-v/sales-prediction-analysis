@@ -33,6 +33,10 @@ npm install
 
 - create the mongoDB account in the mongoDB atlas and create the cluster
 
+- Note: A guide to create the mongoDB account and mongoDB URL
+
+  https://www.youtube.com/watch?v=oVHQXwkdS6w
+
 - click on connect and select connect your application.
 
 - select python as Driver and select version as per the version that you have installed in your PC and get the MONGO DB url from it
@@ -61,9 +65,9 @@ python -c 'import os; print(os.urandom(24))';
 
 ![image](https://user-images.githubusercontent.com/84177086/211178227-ee5ff76c-3bd4-4408-af31-bb505fd8a228.png)
 
-#### A guide to Email.js
+- A guide to Email.js
 
-https://www.youtube.com/watch?v=dgcYOm8n8ME
+  https://www.youtube.com/watch?v=dgcYOm8n8ME
 
 #### Email.js Content template screenshot 👇
 
