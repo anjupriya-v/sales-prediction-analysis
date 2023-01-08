@@ -92,5 +92,8 @@ cd server
 flask --app app --debug run
 ```
 
+Note: This Application will be worked only for the following single dataset.
+
+[sales_data_sample.csv](https://github.com/anjupriya-v/sales-prediction-analysis/files/10367624/sales_data_sample.csv)
 
 
