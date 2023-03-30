@@ -41,13 +41,15 @@ npm install
 
 - select python as Driver and select version as per the version that you have installed in your PC and get the MONGO DB url from it
 
-- Then create the database user and set the built-in role as `read and write to any database` and click on Add user.
+- Then create the database user by clicking the database access from the mongoDB atlas menu and click on `Add New Database User`. Then provide the username and password and set the built-in role as `read and write to any database` and click on Add user.
 
 - Replace the DB user name and password in the MongoDB URL.
 
 - Paste the MongoDB URL in app.py file `/server/app.py`
 
 ![image](https://user-images.githubusercontent.com/84177086/211177985-2f65f5ac-bf7a-436a-9470-e381841e6fdc.png)
+
+- Create the database which should be named as `SalesPrediction` and provide the collection name as `account` .
 
 - Create the Secret key typing the following command in the terminal.
 
