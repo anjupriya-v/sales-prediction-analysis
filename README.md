@@ -34,8 +34,8 @@ npm install
 - create the mongoDB account in the mongoDB atlas and create the cluster
 
 - Note: A guide to create the mongoDB account and mongoDB URL
-
   https://www.youtube.com/watch?v=oVHQXwkdS6w
+
 
 - click on connect and select connect your application.
 
@@ -49,7 +49,9 @@ npm install
 
 ![image](https://user-images.githubusercontent.com/84177086/211177985-2f65f5ac-bf7a-436a-9470-e381841e6fdc.png)
 
-- Create the database which should be named as `SalesPrediction` and provide the collection name as `account` .
+- To create the database, click the database from the mongoDB atlas menu. Then click `Browse Collections` and click `Create Database`
+
+- Note: The database should be named as `SalesPrediction` and  the collection should be named as `account` .
 
 - Create the Secret key typing the following command in the terminal.
 
@@ -71,11 +73,11 @@ python -c 'import os; print(os.urandom(24))';
 
   https://www.youtube.com/watch?v=dgcYOm8n8ME
 
-#### Email.js Content template screenshot 👇
+### Email.js Content template screenshot 👇
 
 ![image](https://user-images.githubusercontent.com/84177086/211178340-f9ddba76-db86-4405-bfef-d2a66d6043d3.png)
 
-#### Email.js Auto reply template screenshot 👇
+### Email.js Auto reply template screenshot 👇
 
 ![image](https://user-images.githubusercontent.com/84177086/211178388-403e071b-5ca8-4261-9aec-944d9193afac.png)
 
@@ -98,7 +100,7 @@ cd server
 flask --app app --debug run
 ```
 
-Note: This Application will be worked only for the following single dataset.
+- Note: This Application will be worked only for the following single dataset.
 
 [sales_data_sample.csv](https://github.com/anjupriya-v/sales-prediction-analysis/files/10367624/sales_data_sample.csv)
 
